@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <h1>Product Page</h1>
-    </div>
+  <h1>상품 페이지</h1>
 </template>
 
 <script>
