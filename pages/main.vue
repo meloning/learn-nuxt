@@ -6,7 +6,10 @@
 
 <script>
 export default {
-    
+    async created() {
+      const response = await this.$axios.get('http://localhost:3000/products')
+      console.log(response)
+    }
 }
 </script>
 
