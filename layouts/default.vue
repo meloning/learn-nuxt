@@ -1,7 +1,9 @@
 <template>
   <div>
     <header>
-      <h1>Nuxt Shopping</h1>
+      <h1>
+        <NuxtLink to="/">Nuxt Shopping</NuxtLink>
+      </h1>
     </header>
     <Nuxt />
   </div>
