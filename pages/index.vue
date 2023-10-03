@@ -12,6 +12,9 @@
           <span>{{ product.price }}</span>
         </li>
       </ul>
+      <div class="cart-wrapper">
+        <button class="btn" @click="moveToCartPage">장바구니 바로가기</button>
+      </div>
     </main>
   </div>
 </template>
@@ -61,6 +64,9 @@ export default {
           imageUrl: `${item.imageUrl}?random=${Math.random()}` // 동일한 주소에서 동일한 이미지를 가져오고 있기 때문에 캐싱될 확률이 있기에
         }
       })
+    },
+    moveToCartPage() {
+      this.$router.push(`/cart`)
     }
   }
 }
