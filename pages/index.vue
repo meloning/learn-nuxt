@@ -2,7 +2,7 @@
   <div class="app">
     <main>
       <div>
-        <input type="text" />
+        <SearchInput />
       </div>
       <ul>
         <li v-for="product in products" :key="product.id" class="item flex" @click="moveToDetailPage(product.id)">
@@ -16,7 +16,10 @@
 </template>
 
 <script>
+// Webpack 설정 내부적으로 특정 파일을 쫓아갈때 resolve 옵션 => 얼라이어스 별칭 옵션
+import SearchInput from '~/components/SearchInput.vue'
 export default {
+  components: { SearchInput },
   // pages 에서만 활용되는 asyncData 함수
   // 페이지가 그려지기 전에 호출되는 함수이기 때문에 컴포넌트 자체를 가리키는 This는 사용할 수 없음.
   async asyncData({ $axios }) {
