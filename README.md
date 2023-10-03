@@ -20,7 +20,7 @@ $ npm run generate
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
 ## Deploy Site
-https://651bfade02184112d1addc80--admirable-sprinkles-26e3f0.netlify.app
+https://admirable-sprinkles-26e3f0.netlify.app
 
 ## Reference
 - [캡틴판교 Nuxt.js 시작하기](https://www.inflearn.com/course/%EB%84%89%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/dashboard)
