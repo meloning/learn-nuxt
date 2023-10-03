@@ -20,9 +20,11 @@
 
 <script>
 export default {
-  async asyncData({ store }) {
-    await store.dispatch('fetchCartItems')
-  }
+  // 페이지 진입하기 전 asyncData를 통해 데이터를 dispatch(다 불러와)하여 데이터를 표현하겠다라는 뜻
+  // async asyncData({ store }) {
+  //   await store.dispatch('fetchCartItems')
+  // }
+  // => nuxtServerInit을 통해 store를 생성하는 시점에(페이지를 렌더하기 훨씬 이전 시점) 데이터를 모두 fetch할 수 있게 actions에서 제공해주는 함수
 }
 </script>
 
