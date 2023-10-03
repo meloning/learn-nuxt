@@ -24,10 +24,10 @@ export default {
   },
   methods: {
     async addToCart() {
-      const response = await this.$axios.post(`http://localhost:3000/carts`, this.product)
+      const response = await this.$axios.post('http://localhost:3000/carts', this.product)
       console.log(response)
       this.$store.commit('addCartItem', this.product)
-      this.$router.push(`/cart`)
+      this.$router.push('/cart')
     }
   }
 }
