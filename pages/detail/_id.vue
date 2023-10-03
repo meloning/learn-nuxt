@@ -22,15 +22,17 @@ export default {
     const product = response.data
     return { product }
   },
-  head: {
-    title: 'Shopping Item',
-    meta: [
-      {
-        hid: 'description',
-        name: 'description',
-        content: '이 상품은 ~~입니다.',
-      },
-    ],
+  head() {
+    return {
+      title: `${this.product.name}`, // ` : 템플릿 리터럴 값 (백틱)
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `이 상품은 ${this.product.name}입니다.`,
+        },
+      ],
+    }
   },
   methods: {
     async addToCart() {
