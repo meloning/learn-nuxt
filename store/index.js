@@ -2,6 +2,7 @@ export const state = () => ({
   cartItems: [],
 })
 
+// state를 변경하는 유일한 동기 함수를 정의해둔 속성이자 영역
 export const mutations = {
   addCartItem(state, cartItem) {
     const newCartItem = {
@@ -15,6 +16,7 @@ export const mutations = {
   }
 }
 
+// mutation 속성(영역) 내에서 비동기 함수를 호출하는 곳
 export const actions = {
   async fetchCartItems({ commit }) {
     const { data } = await this.$axios.get(`http://localhost:3000/carts`)
