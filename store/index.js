@@ -27,7 +27,7 @@ export const actions = {
   },
   // 호출하지 않아도 된다.
   // 라이프사이클 훅과 같은 동작이기 때문에 호출 X
-  async nuxtServerInit(storeContext, nuxtContext) {
-    await storeContext.dispatch('fetchCartItems')
-  }
+  // async nuxtServerInit(storeContext, nuxtContext) {
+  //   await storeContext.dispatch('fetchCartItems')
+  // }
 }
