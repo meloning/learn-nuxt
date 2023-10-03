@@ -31,7 +31,7 @@ export default {
         imageUrl: `${item.imageUrl}?random=${Math.random()}` // 동일한 주소에서 동일한 이미지를 가져오고 있기 때문에 캐싱될 확률이 있기에
       }
     })
-    return { products }
+    return { products } // return 값이 data 속성으로 내부적으로 추가된다.
   },
 
   data() {
@@ -54,7 +54,13 @@ export default {
           name_like: this.searchKeyword
         }
       })
-      console.log(response)
+      // console.log(response)
+      this.products = response.data.map(item => {
+        return {
+          ...item, // spread operator
+          imageUrl: `${item.imageUrl}?random=${Math.random()}` // 동일한 주소에서 동일한 이미지를 가져오고 있기 때문에 캐싱될 확률이 있기에
+        }
+      })
     }
   }
 }
