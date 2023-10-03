@@ -18,13 +18,13 @@
 
 export default {
   async asyncData({ $axios, params }) {
-    const response = await $axios.get(`http://localhost:3000/products/${params.id}`)
+    const response = await $axios.get(`${process.env.baseURL}/products/${params.id}`)
     const product = response.data
     return { product }
   },
   methods: {
     async addToCart() {
-      const response = await this.$axios.post('http://localhost:3000/carts', this.product)
+      const response = await this.$axios.post(`${process.env.baseURL}/carts`, this.product)
       console.log(response)
       this.$store.commit('addCartItem', this.product)
       this.$router.push('/cart')

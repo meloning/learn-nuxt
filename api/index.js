@@ -1,6 +1,6 @@
 import $axios from '@nuxtjs/axios'
 
-const instance = $axios.setBaseURL('http://localhost:3000')
+const instance = $axios.setBaseURL(process.env.baseURL)
 
 function fetchProductById(id) {
   return instance.get(`/products/${id}`)
