@@ -28,3 +28,8 @@ https://admirable-sprinkles-26e3f0.netlify.app
 - [Netlify](https://app.netlify.com/teams/meloning/overview)
   - Paas 기반 서비스, 정적 웹 사이트 [빌드, 배포, 관리]
   - Repository의 Public/Private 상관 없이 배포 가능
+
+- [카카오 OG 태그 디버그](https://developers.kakao.com/tool/clear/og)
+- [페이스북 OG 태그 디버그](https://developers.facebook.com/tools/debug)
+  - SNS 상에서 OG 태그가 반영되지 않을때 SNS 서버의 캐싱을 의심할 수 있습니다.
+  - OG 태그 캐싱 정보를 확인하고 지울 수 있습니다.
