@@ -3,7 +3,7 @@
     <main>
       <div>
         <!-- <SearchInput :search-keyword="searchKeyword" @input="updateSearchKeyword"/> -->
-        <SearchInput v-model="searchKeyword"/>
+        <SearchInput v-model="searchKeyword" @search="searchProducts" />
       </div>
       <ul>
         <li v-for="product in products" :key="product.id" class="item flex" @click="moveToDetailPage(product.id)">
@@ -47,6 +47,14 @@ export default {
     },
     updateSearchKeyword(keyword) {
       this.searchKeyword = keyword
+    },
+    async searchProducts() {
+      const response = await this.$axios.get(`http://localhost:3000/products`, {
+        params: {
+          name_like: this.searchKeyword
+        }
+      })
+      console.log(response)
     }
   }
 }
