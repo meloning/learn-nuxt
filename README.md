@@ -22,6 +22,10 @@ For detailed explanation on how things work, check out the [documentation](https
 ## Deploy Site
 https://admirable-sprinkles-26e3f0.netlify.app
 
+## Issue
+- [이미지 오류](https://www.inflearn.com/questions/980077/db-json-%EC%97%90-%EC%A0%9C%EA%B3%B5%EB%90%98%EB%8A%94-imgurl-%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B0%80-%EC%A2%85%EB%A3%8C%EB%90%9C%EB%93%AF%ED%95%98%EB%84%A4%EC%9A%94)
+  - 다른 무료 이미지 사이트로 대체 필요
+
 ## Reference
 - [캡틴판교 Nuxt.js 시작하기](https://www.inflearn.com/course/%EB%84%89%EC%8A%A4%ED%8A%B8-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/dashboard)
 
