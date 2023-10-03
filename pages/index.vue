@@ -2,7 +2,8 @@
   <div class="app">
     <main>
       <div>
-        <SearchInput />
+        <!-- <SearchInput :search-keyword="searchKeyword" @input="updateSearchKeyword"/> -->
+        <SearchInput v-model="searchKeyword"/>
       </div>
       <ul>
         <li v-for="product in products" :key="product.id" class="item flex" @click="moveToDetailPage(product.id)">
@@ -33,10 +34,19 @@ export default {
     return { products }
   },
 
+  data() {
+    return {
+      searchKeyword: '',
+    }
+  },
+
   methods: {
     moveToDetailPage(id) {
-      console.log(id)
+      // console.log(id)
       this.$router.push(`detail/${id}`) // dynamic routing -> _id.vue (_id == parameter)
+    },
+    updateSearchKeyword(keyword) {
+      this.searchKeyword = keyword
     }
   }
 }
