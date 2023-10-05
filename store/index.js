@@ -1,3 +1,5 @@
+import { addRandomQueryToImageUrl } from "@/plugins/image-utils"
+
 export const state = () => ({
   cartItems: [],
 })
@@ -7,7 +9,7 @@ export const mutations = {
   addCartItem(state, cartItem) {
     const newCartItem = {
       ...cartItem, // spread operator
-      imageUrl: `${cartItem.imageUrl}?random=${Math.random()}` // 동일한 주소에서 동일한 이미지를 가져오고 있기 때문에 캐싱될 확률이 있기에
+      imageUrl: addRandomQueryToImageUrl(cartItem.imageUrl)
     }
     state.cartItems.push(newCartItem)
   },
@@ -22,7 +24,7 @@ export const actions = {
     const { data } = await this.$axios.get(`http://localhost:3000/carts`)
     commit('setCartItems', data.map(item => ({
       ...item, // spread operator
-      imageUrl: `${item.imageUrl}?random=${Math.random()}` // 동일한 주소에서 동일한 이미지를 가져오고 있기 때문에 캐싱될 확률이 있기에
+      imageUrl: addRandomQueryToImageUrl(item.imageUrl)
     })))
   },
   // 호출하지 않아도 된다.

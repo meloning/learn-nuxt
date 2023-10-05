@@ -22,6 +22,8 @@
 <script>
 // Webpack 설정 내부적으로 특정 파일을 쫓아갈때 resolve 옵션 => 얼라이어스 별칭 옵션
 import SearchInput from '~/components/SearchInput.vue'
+import { addRandomQueryToImageUrl } from '@/plugins/image-utils.js';
+
 export default {
   components: { SearchInput },
   // pages 에서만 활용되는 asyncData 함수
@@ -31,7 +33,7 @@ export default {
     const products = response.data.map(item => {
       return {
         ...item, // spread operator
-        imageUrl: `${item.imageUrl}?random=${Math.random()}` // 동일한 주소에서 동일한 이미지를 가져오고 있기 때문에 캐싱될 확률이 있기에
+        imageUrl: addRandomQueryToImageUrl(item.imageUrl)
       }
     })
     return { products } // return 값이 data 속성으로 내부적으로 추가된다.
@@ -61,7 +63,7 @@ export default {
       this.products = response.data.map(item => {
         return {
           ...item, // spread operator
-          imageUrl: `${item.imageUrl}?random=${Math.random()}` // 동일한 주소에서 동일한 이미지를 가져오고 있기 때문에 캐싱될 확률이 있기에
+          imageUrl: addRandomQueryToImageUrl(item.imageUrl)
         }
       })
     },
