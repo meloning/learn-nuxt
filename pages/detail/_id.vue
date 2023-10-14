@@ -14,12 +14,12 @@
 </template>
 
 <script>
-// import { fetchProductById } from '@/api/index'
+import { fetchProductById } from '@/api'
 import { ADD_CART_ITEMS } from '@/store'
 
 export default {
   async asyncData({ $axios, params }) {
-    const response = await $axios.get(`${process.env.baseURL}/products/${params.id}`)
+    const response = await fetchProductById(params.id)
     const product = response.data
     return { product }
   },
