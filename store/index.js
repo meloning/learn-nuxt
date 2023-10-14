@@ -1,4 +1,5 @@
 import { addRandomQueryToImageUrl } from "@/plugins/image-utils"
+import { fetchCartItems } from "@/api"
 
 export const state = () => ({
   cartItems: [],
@@ -28,7 +29,7 @@ export const actions = {
   // ES6 +의 동적 키 값 정의 방식 활용
   // -> TS에서 타입 추론 관점에서 이점을 얻을 수 있음.
   async [FETCH_CART_ITEMS]({ commit }) {
-    const { data } = await this.$axios.get(`http://localhost:3000/carts`)
+    const { data } = await fetchCartItems()
     commit(SET_CART_ITENS, data.map(item => ({
       ...item, // spread operator
       imageUrl: addRandomQueryToImageUrl(item.imageUrl)

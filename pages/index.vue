@@ -23,6 +23,7 @@
 // Webpack 설정 내부적으로 특정 파일을 쫓아갈때 resolve 옵션 => 얼라이어스 별칭 옵션
 import SearchInput from '~/components/SearchInput.vue'
 import { addRandomQueryToImageUrl } from '@/plugins/image-utils.js';
+import { fetchProductsByKeyword } from '@/api'
 
 export default {
   components: { SearchInput },
@@ -54,11 +55,7 @@ export default {
       this.searchKeyword = keyword
     },
     async searchProducts() {
-      const response = await this.$axios.get(`${process.env.baseURL}/products`, {
-        params: {
-          name_like: this.searchKeyword
-        }
-      })
+      const response = await fetchProductsByKeyword(this.searchKeyword)
       // console.log(response)
       this.products = response.data.map(item => {
         return {
