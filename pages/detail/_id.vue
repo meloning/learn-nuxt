@@ -15,6 +15,7 @@
 
 <script>
 // import { fetchProductById } from '@/api/index'
+import { ADD_CART_ITEMS } from '@/store'
 
 export default {
   async asyncData({ $axios, params }) {
@@ -53,7 +54,7 @@ export default {
     async addToCart() {
       const response = await this.$axios.post(`${process.env.baseURL}/carts`, this.product)
       console.log(response)
-      this.$store.commit('addCartItem', this.product)
+      this.$store.commit(ADD_CART_ITEMS, this.product)
       this.$router.push('/cart')
     }
   },
